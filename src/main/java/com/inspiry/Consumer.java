@@ -15,15 +15,11 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @ImportResource("classpath:consumer.xml")
 public class Consumer implements CommandLineRunner{
+    //spring boot方式启动
     @Autowired
     private IUserService userService;
 
     public static void main( String[] args ) {
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
-//        context.start();
-//        IUserService userService = (IUserService) context.getBean("userService");
-//        userService.show();
-//        System.out.println( "Hello World!" );
         SpringApplication.run(Consumer.class, args);
         System.out.println( "[demo2-consumer] Hello World!" );
     }
@@ -32,4 +28,12 @@ public class Consumer implements CommandLineRunner{
         System.out.println("age = " + userService.show(5));
         System.out.println("[demo2-consumer] server started");
     }
+    //spring 方式启动
+//    public static void main( String[] args ) {
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:consumer.xml");
+//        context.start();
+//        IUserService userService = (IUserService) context.getBean("userService");
+//        userService.show();
+//        System.out.println( "Hello World!" );
+//    }
 }
