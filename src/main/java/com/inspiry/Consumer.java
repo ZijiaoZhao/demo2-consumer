@@ -1,6 +1,5 @@
 package com.inspiry;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.inspiry.demo.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,18 +9,17 @@ import org.springframework.context.annotation.ImportResource;
 
 /**
  * Hello world!
- *
  */
 @SpringBootApplication
 @ImportResource("classpath:consumer.xml")
-public class Consumer implements CommandLineRunner{
+public class Consumer implements CommandLineRunner {
     //spring boot方式启动
     @Autowired
     private IUserService userService;
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         SpringApplication.run(Consumer.class, args);
-        System.out.println( "[demo2-consumer] Hello World!" );
+        System.out.println("[demo2-consumer] Hello World!");
     }
 
     public void run(String... args) throws Exception {
